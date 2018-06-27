@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Djl.Core
+﻿namespace Djl.Core.Extension
 {
     public static class StringExtension
     {
