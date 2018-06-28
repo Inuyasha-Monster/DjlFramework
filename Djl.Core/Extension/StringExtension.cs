@@ -5,8 +5,6 @@ namespace Djl.Core.Extension
 {
     public static class StringExtension
     {
-        #region 空判断
-
         public static bool IsNull(this string str)
         {
             return str == null;
@@ -26,9 +24,7 @@ namespace Djl.Core.Extension
         {
             return string.Format(inputStr, obj);
         }
-        #endregion
 
-        #region 常用正则表达式
         private static readonly Regex EmailRegex = new Regex(@"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", RegexOptions.IgnoreCase);
 
         private static readonly Regex MobileRegex = new Regex("^1[0-9]{10}$");
@@ -153,9 +149,6 @@ namespace Djl.Core.Extension
             return extension == ".png" || extension == ".bmp" || extension == ".jpg" || extension == ".jpeg" || extension == ".gif";
         }
 
-        #endregion
-
-        #region 字符串截取
         /// <summary>
         /// 截取字符串
         /// </summary>
@@ -180,9 +173,6 @@ namespace Djl.Core.Extension
             return inputStr.IsNullOrEmpty() ? inputStr : Regex.Replace(inputStr, pattern, replacement);
         }
 
-        #endregion
-
-        #region 字符格式化
         /// <summary>
         /// 字符格式化
         /// </summary>
@@ -198,9 +188,6 @@ namespace Djl.Core.Extension
             return result;
         }
 
-        #endregion
-
-        #region 格式化文本
         /// <summary>
         /// 格式化电话
         /// </summary>
@@ -248,7 +235,5 @@ namespace Djl.Core.Extension
 
             return bankCark;
         }
-
-        #endregion     
     }
 }
