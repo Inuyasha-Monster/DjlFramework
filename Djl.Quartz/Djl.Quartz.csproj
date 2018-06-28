@@ -5,6 +5,11 @@
     <Description>基于.netstandard的quartz集成</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/djl394922860/DjlFramework/tree/master/Djl.Quartz</PackageProjectUrl>
+    <PackageIconUrl />
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType></RepositoryType>
+    <PackageReleaseNotes />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
