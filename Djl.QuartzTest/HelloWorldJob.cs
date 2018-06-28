@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Globalization;
 using System.Threading.Tasks;
 using Djl.Quartz;
 using Microsoft.Extensions.Logging;
 using Quartz;
+using Xunit.Abstractions;
 
 namespace Djl.QuartzTest
 {
@@ -11,17 +14,19 @@ namespace Djl.QuartzTest
     public class HelloWorldJob : JobBase
     {
         private readonly ILogger<HelloWorldJob> _logger;
+        private readonly ITestOutputHelper _testOutputHelper;
 
-        public HelloWorldJob(ILogger<HelloWorldJob> logger)
+        public HelloWorldJob(ILogger<HelloWorldJob> logger, ITestOutputHelper testOutputHelper)
         {
             _logger = logger;
+            _testOutputHelper = testOutputHelper;
         }
 
         protected override ILogger Logger => _logger;
 
         protected override async Task ExecuteJob(IJobExecutionContext context)
         {
-            await Task.Run(() => Console.WriteLine("Hello World"));
+            await Task.Run(() => _testOutputHelper.WriteLine($"Hello World {DateTime.Now.ToString(CultureInfo.CurrentCulture)}"));
         }
     }
 }

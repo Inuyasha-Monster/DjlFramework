@@ -27,7 +27,7 @@ namespace Djl.Quartz
             service.AddSingleton<IJobFactory, DefaultJobFactory>(provider => new DefaultJobFactory(provider.GetService<ILogger<DefaultJobFactory>>(), provider));
 
             // registe all jobs to Iservicecollection
-            var jobs = Assembly.GetExecutingAssembly().GetTypes().Where(x => x.BaseType == typeof(JobBase) || x.GetInterfaces().Any(i => i == typeof(IJob))).Where(x => x.GetCustomAttribute<IgnoreJobAttribute>() == null)
+            var jobs = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).Where(x => x.BaseType == typeof(JobBase) || x.GetInterfaces().Any(i => i == typeof(IJob))).Where(x => x.GetCustomAttribute<IgnoreJobAttribute>() == null)
                 .Where(x => x.IsAbstract == false);
 
             foreach (var job in jobs)

@@ -7,7 +7,7 @@ using Quartz.Spi;
 namespace Djl.Quartz
 {
     /// <summary>
-    /// Job执行任务构造工厂
+    /// Job执行任务构造工厂(IServiceProvider来动态解析构建job)
     /// </summary>
     public class DefaultJobFactory : IJobFactory
     {
