@@ -12,15 +12,15 @@ namespace Djl.EventDbContextTest
         static void Main(string[] args)
         {
             IServiceCollection serviceCollection = new ServiceCollection();
-            serviceCollection.AddDbContext<EventDbcontext>(builder =>
+            serviceCollection.AddDbContext<MqEventDbcontext>(builder =>
             {
                 builder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EventDbcontext;Trusted_Connection=True;", x =>
                 {
-                    x.MigrationsAssembly(Assembly.GetAssembly(typeof(EventDbcontext)).GetName().Name);
+                    x.MigrationsAssembly(Assembly.GetAssembly(typeof(MqEventDbcontext)).GetName().Name);
                 });
             });
             var serviceProvider = serviceCollection.BuildServiceProvider(true);
-            var dbcontext = serviceProvider.GetRequiredService<EventDbcontext>();
+            var dbcontext = serviceProvider.GetRequiredService<MqEventDbcontext>();
             var messages = dbcontext.MqEventMessages.ToList();
             foreach (var message in messages)
             {
