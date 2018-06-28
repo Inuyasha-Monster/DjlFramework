@@ -6,8 +6,8 @@ using Quartz;
 
 namespace Djl.QuartzTest
 {
-    [JobDescription("HelloWorldJob")]
-    [IntervalTrigger("HelloWorldTrigger", 5)]
+    [JobDescription(description: "HelloWorldJob")]
+    [IntervalTrigger(description: "HelloWorldTrigger", intervalInSeconds: 5)]
     public class HelloWorldJob : JobBase
     {
         private readonly ILogger<HelloWorldJob> _logger;
