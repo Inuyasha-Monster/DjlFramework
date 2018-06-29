@@ -21,15 +21,13 @@ namespace Djl.Quartz.Test
         [Fact]
         public void TestQuartz()
         {
-            _output.WriteLine($"开始测试定时调度任务 {DateTime.Now.ToString()}");
             IServiceCollection services = new ServiceCollection();
             services.AddSingleton<ITestOutputHelper>(_output);
             services.AddLogging(x => x.AddConsole());
             services.AddQuartz();
             IApplicationBuilder applicationBuilder = new ApplicationBuilder(services.BuildServiceProvider());
             applicationBuilder.UseQuartz();
-            Task.Delay(TimeSpan.FromSeconds(12)).Wait();
-            _output.WriteLine($"结束测试定时调度任务 {DateTime.Now.ToString()}");
+            Task.Delay(TimeSpan.FromSeconds(4)).Wait();
         }
     }
 }

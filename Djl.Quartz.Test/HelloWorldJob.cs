@@ -9,7 +9,7 @@ using Xunit.Abstractions;
 namespace Djl.Quartz.Test
 {
     [JobDescription(description: "HelloWorldJob")]
-    [IntervalTrigger(description: "HelloWorldTrigger", intervalInSeconds: 5, startNow: false)]
+    [IntervalTrigger(description: "HelloWorldTrigger", intervalInSeconds: 5, startNow: true)]
     public class HelloWorldJob : JobBase
     {
         private readonly ILogger<HelloWorldJob> _logger;
