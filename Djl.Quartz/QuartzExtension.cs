@@ -72,7 +72,7 @@ namespace Djl.Quartz
             var scheduler = serviceProvider.GetRequiredService<IScheduler>();
             var jobFactory = serviceProvider.GetRequiredService<IJobFactory>();
             scheduler.JobFactory = jobFactory;
-            scheduler.Start().Wait();
+         
 
             // add jobdetail with trigger to scheduler 
             var jobs = app.ApplicationServices.GetServices<IJob>();
@@ -116,6 +116,8 @@ namespace Djl.Quartz
                 }
                 scheduler.ScheduleJob(jobDetail, trigger).Wait();
             }
+
+            scheduler.Start().Wait();
         }
     }
 }
