@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Djl.Quartz
+namespace Djl.Quartz.Core
 {
     /// <summary>
     /// Job描述类

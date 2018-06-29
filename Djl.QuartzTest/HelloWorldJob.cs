@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Threading.Tasks;
 using Djl.Quartz;
+using Djl.Quartz.Core;
 using Microsoft.Extensions.Logging;
 using Quartz;
 using Xunit.Abstractions;

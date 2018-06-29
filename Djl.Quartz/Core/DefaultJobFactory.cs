@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using Quartz;
 using Quartz.Spi;
 
-namespace Djl.Quartz
+namespace Djl.Quartz.Core
 {
     /// <summary>
     /// Job执行任务构造工厂(IServiceProvider来动态解析构建job)

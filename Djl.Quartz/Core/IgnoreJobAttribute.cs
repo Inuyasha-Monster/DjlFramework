@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Djl.Quartz
+namespace Djl.Quartz.Core
 {
     /// <summary>
     /// 排除Job标记

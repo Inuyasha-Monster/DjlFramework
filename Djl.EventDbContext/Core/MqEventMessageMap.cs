@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Djl.EventDbContext
+namespace Djl.EventDbContext.Core
 {
     public class MqEventMessageMap : IEntityTypeConfiguration<MqEventMessage>
     {

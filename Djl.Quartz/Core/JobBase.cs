@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Quartz;
 
-namespace Djl.Quartz
+namespace Djl.Quartz.Core
 {
     /// <summary>
     /// Job基础类防并发以及持久化Job数据

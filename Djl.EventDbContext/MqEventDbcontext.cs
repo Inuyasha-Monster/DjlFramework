@@ -1,4 +1,5 @@
 ﻿using System;
+using Djl.EventDbContext.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace Djl.EventDbContext

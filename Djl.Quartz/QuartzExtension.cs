@@ -2,6 +2,7 @@
 using System.Collections.Specialized;
 using System.Linq;
 using System.Reflection;
+using Djl.Quartz.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -11,6 +12,9 @@ using Quartz.Spi;
 
 namespace Djl.Quartz
 {
+    /// <summary>
+    /// 定时器框架扩展类
+    /// </summary>
     public static class QuartzExtension
     {
         private static void InternalInitScheduer(IServiceCollection service, NameValueCollection props)

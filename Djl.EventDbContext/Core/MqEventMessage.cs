@@ -1,7 +1,6 @@
 ﻿using System;
-using Djl.EventDbContext.Core;
 
-namespace Djl.EventDbContext
+namespace Djl.EventDbContext.Core
 {
     public class MqEventMessage : IntegrationEvent
     {

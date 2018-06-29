@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Djl.Quartz
+namespace Djl.Quartz.Core
 {
     /// <summary>
     /// Job循环执行触发器标记描述
