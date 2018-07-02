@@ -13,7 +13,7 @@ namespace Djl.EventDbContext.Core
         public DateTime? SeedTime { get; set; }
         public string AssemblyName { get; set; }
         public string ClassFullName { get; set; }
-        public string Body { get; set; }
+        public string JsonBody { get; set; }
         /// <summary>
         /// 发送失败记录错误到消息Row中
         /// </summary>

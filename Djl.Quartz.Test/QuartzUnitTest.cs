@@ -27,7 +27,7 @@ namespace Djl.Quartz.Test
             services.AddQuartz();
             IApplicationBuilder applicationBuilder = new ApplicationBuilder(services.BuildServiceProvider());
             applicationBuilder.UseQuartz();
-            Task.Delay(TimeSpan.FromSeconds(4)).Wait();
+            Task.Delay(TimeSpan.FromSeconds(15)).Wait();
         }
     }
 }

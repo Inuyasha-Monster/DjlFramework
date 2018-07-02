@@ -11,15 +11,32 @@ namespace Djl.Quartz.Core
     /// </summary>
     public class DefaultJobFactory : IJobFactory
     {
+        /// <summary>
+        /// 日志记录器
+        /// </summary>
         private readonly ILogger<DefaultJobFactory> _logger;
+        /// <summary>
+        /// 服务容器
+        /// </summary>
         private readonly IServiceProvider _serviceProvider;
 
+        /// <summary>
+        /// 默认构造函数
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="serviceProvider"></param>
         public DefaultJobFactory(ILogger<DefaultJobFactory> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
             _serviceProvider = serviceProvider;
         }
 
+        /// <summary>
+        /// 构建Job任务实例
+        /// </summary>
+        /// <param name="bundle"></param>
+        /// <param name="scheduler"></param>
+        /// <returns></returns>
         public IJob NewJob(TriggerFiredBundle bundle, IScheduler scheduler)
         {
             try
@@ -37,6 +54,10 @@ namespace Djl.Quartz.Core
             }
         }
 
+        /// <summary>
+        /// 销毁或者清除任务
+        /// </summary>
+        /// <param name="job"></param>
         public void ReturnJob(IJob job)
         {
             var disposable = job as IDisposable;

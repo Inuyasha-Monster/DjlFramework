@@ -11,7 +11,7 @@ namespace Djl.EventDbContext.Core
             builder.Property(x => x.CreatiedDateTime).IsRequired();
             builder.Property(x => x.AssemblyName).IsRequired().HasMaxLength(100);
             builder.Property(x => x.ClassFullName).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.Body).IsRequired().HasMaxLength(4000);
+            builder.Property(x => x.JsonBody).IsRequired().HasMaxLength(4000);
             builder.Property(x => x.PublishErrorMsg).HasMaxLength(1000);
         }
     }

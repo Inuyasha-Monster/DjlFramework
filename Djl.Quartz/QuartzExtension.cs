@@ -44,13 +44,18 @@ namespace Djl.Quartz
             service.AddSingleton<IScheduler>(scheduler);
         }
 
+        /// <summary>
+        /// 添加Quartz定时器框架扩展
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="props"></param>
         public static void AddQuartz(this IServiceCollection service, NameValueCollection props)
         {
             InternalInitScheduer(service, props);
         }
 
         /// <summary>
-        /// 使用默认配置
+        /// 使用默认配置-添加Quartz定时器框架扩展
         /// </summary>
         /// <param name="service"></param>
         public static void AddQuartz(this IServiceCollection service)
@@ -66,6 +71,10 @@ namespace Djl.Quartz
             InternalInitScheduer(service, props);
         }
 
+        /// <summary>
+        /// 启动定时器框架-自动扫描注入启动
+        /// </summary>
+        /// <param name="app"></param>
         public static void UseQuartz(this IApplicationBuilder app)
         {
             var serviceProvider = app.ApplicationServices;
@@ -116,7 +125,6 @@ namespace Djl.Quartz
                 }
                 scheduler.ScheduleJob(jobDetail, trigger).Wait();
             }
-
             scheduler.Start().Wait();
         }
     }
