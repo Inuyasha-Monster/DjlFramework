@@ -1,9 +1,9 @@
 ﻿namespace Djl.Consul.Register.Core
 {
-    public class ServiceDisvoveryOptions
+    public class ServiceDisvoveryOption
     {
         public string ServiceName { get; set; }
 
-        public ConsulOptions Consul { get; set; }
+        public ConsulOption Consul { get; set; }
     }
 }

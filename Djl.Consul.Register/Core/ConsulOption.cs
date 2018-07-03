@@ -1,6 +1,6 @@
 ﻿namespace Djl.Consul.Register.Core
 {
-    public class ConsulOptions
+    public class ConsulOption
     {
         public string HttpEndpoint { get; set; }
 
